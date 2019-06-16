@@ -40,6 +40,9 @@ cinst -y sass
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
+# Restart PowerShell / CMDer before moving on - or run
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
 npm install -g npm-windows-upgrade
 npm install -g gulp-cli
 npm install -g brunch
@@ -47,8 +50,8 @@ npm install -g browser-sync
 
 Install-WindowsUpdate -acceptEula
 
-# Restart PowerShell / CMDer before moving on - or run
-#$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+#Force Reboot
+Invoke-Reboot
 
 # Pinning Things
 #Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
