@@ -32,10 +32,14 @@ cinst -y vscode
 cinst -y filezilla
 cinst -y tortoisesvn
 cinst -y jdk8
+cinst -y sass
 
 if (Test-PendingReboot) { Invoke-Reboot }
 
 npm install -g npm-windows-upgrade
+npm install -g gulp-cli
+npm install -g brunch
+npm install -g browser-sync
 
 Install-WindowsUpdate -acceptEula
 
