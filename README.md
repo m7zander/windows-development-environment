@@ -7,6 +7,12 @@ All needed Tools and some important Windows settings and features can be install
 ```powershell
 iexplore.exe https://t1p.de/ifn9
 ```
+ 
+ That's a short form for
+ 
+ ```powershell
+iexplore.exe http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/markus4zander/windows-development-environment/master/boxstarter
+```
 
 #### Node and npm
 A bunch of tools are powered by Node and installed via npm. This applies to you even if you don't care about Node development. If you want to install tools for React, Azure, TypeScript, or Cordova, you'll need this.
