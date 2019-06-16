@@ -19,12 +19,12 @@ cinst -y pdfsam.install
 cinst -y paint.net
 cinst -y teamviewer --version 13.2.26558
 
+cinst -y winmerge
 cinst -y teamspeak
 cinst -y anydesk
 cinst -y hxd
-cinst -y winmerge
 cinst -y far
-cisnt -y firefox
+cinst -y firefox
 cinst -y fiddler
 cinst -y sysinternals
 cinst -y nodejs.install
