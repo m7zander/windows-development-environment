@@ -1,56 +1,47 @@
 # Configure Windows
-#Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableShowRibbon
+Disable-GameBarTips
+Disable-BingSearch
+Enable-MicrosoftUpdate
+Set-TaskbarOptions -AlwaysShowIconsOn
 
-#Update-ExecutionPolicy Unrestricted
+Update-ExecutionPolicy Unrestricted
 
-#cinst -y Microsoft-Hyper-V-All -source windowsFeatures
+choco feature enable -n=useRememberedArgumentsForUpgrades
 
-# Packages
-#cinst -y hyper
+cinst -y Microsoft-Hyper-V-All -source windowsFeatures
 
-## Git
-#cinst -y git.install
-#cinst -y poshgit
+cinst -y notepadplusplus.install
+cinst -y GoogleChrome
+cinst -y 7zip.install
+cinst -y FoxitReader
+cinst -y pdfsam.install
+cinst -y paint.net
+cinst -y teamviewer --version 13.2.26558
+
+cinst -y teamspeak
+cinst -y anydesk
+cinst -y hxd
+cinst -y winmerge
+cinst -y far
+cisnt -y firefox
+cinst -y fiddler
+cinst -y sysinternals
+cinst -y nodejs.install
+cinst -y vscode
+cinst -y filezilla
+cinst -y tortoisesvn
+cinst -y jdk8
+
+if (Test-PendingReboot) { Invoke-Reboot }
+
+npm install -g npm-windows-upgrade
+
+Install-WindowsUpdate -acceptEula
 
 # Restart PowerShell / CMDer before moving on - or run
 #$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
-#cinst Git-Credential-Manager-for-Windows
-#cinst github
-
-## Node, npm
-#cinst -y nodejs.install
-#npm install -g npm-windows-upgrade
-
-## Editors
-#cinst -y visualstudiocode
-
-## Visual Studio 2017
-#cinst -y visualstudio2017community
-#if (Test-PendingReboot) { Invoke-Reboot }
-
-## Ruby, Go, Python
-#cinst -y ruby
-#cinst -y ruby.devkit
-
-#cinst -y python2
-
-#if (Test-PendingReboot) { Invoke-Reboot }
-
-## Basics
-#cinst -y vlc
-#cinst -y GoogleChrome
-#cinst -y 7zip.install
-#cinst -y sysinternals
-#cinst -y DotNet3.5
-
-# cinst -y DotNet4.0 -- not needed on windows 8
-# cinst -y DotNet4.5 -- not needed on windows 10
-# cinst -y PowerShell -- not needed on windows 10
-#if (Test-PendingReboot) { Invoke-Reboot }
-
 # Pinning Things
 #Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
 
-# Let's get Updates, too
-#Install-WindowsUpdate -acceptEula
