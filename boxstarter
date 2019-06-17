@@ -21,6 +21,7 @@ cinst pdfsam.install -y -cacheLocation $ChocoCachePath
 cinst paint.net -y -cacheLocation $ChocoCachePath
 cinst teamviewer -y -cacheLocation $ChocoCachePath --version 13.1.1548 --ignore-checksums
 choco pin add -n=teamviewer
+cinst chocolately -y -cacheLocation $ChocoCachePath
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
 cinst winmerge -y -cacheLocation $ChocoCachePath
