@@ -30,14 +30,20 @@ cinst -y anydesk
 cinst -y hxd
 cinst -y far
 cinst -y firefox
-cinst -y fiddler
-cinst -y sysinternals
-cinst -y nodejs.install
-cinst -y vscode
 cinst -y filezilla
+cinst -y sysinternals
+cinst -y fiddler
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+cinst -y nodejs.install
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+cinst -y vscode
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst -y tortoisesvn
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst -y jdk8
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst -y sass
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 npm install -g npm-windows-upgrade
 npm install -g gulp-cli
