@@ -1,7 +1,5 @@
 $ChocoCachePath = "C:\Temp"
 New-Item -Path $ChocoCachePath -ItemType directory -Force
-$Boxstarter.RebootOk=$true
-$Boxstarter.AutoLogin=$true
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableShowRibbon
 Disable-GameBarTips
 Disable-BingSearch
@@ -21,7 +19,7 @@ cinst FoxitReader -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst pdfsam.install -y -cacheLocation $ChocoCachePath
 cinst paint.net -y -cacheLocation $ChocoCachePath
-cinst teamviewer -y --version 13.2.26558 -cacheLocation $ChocoCachePath --ignore-checksums
+cinst teamviewer -y -cacheLocation $ChocoCachePath --version 13.1.1548 --ignore-checksums
 choco pin add -n=teamviewer
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
@@ -54,9 +52,6 @@ npm install -g brunch
 npm install -g browser-sync
 
 Install-WindowsUpdate -acceptEula
-
-#Force Reboot
-Invoke-Reboot
 
 # Pinning Things
 Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
