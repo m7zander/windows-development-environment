@@ -1,3 +1,5 @@
+$ChocoCachePath = “C:\Temp”
+New-Item -Path $ChocoCachePath -ItemType directory -Force
 $Boxstarter.RebootOk=$true
 $Boxstarter.AutoLogin=$true
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableShowRibbon
@@ -10,39 +12,39 @@ Update-ExecutionPolicy Unrestricted
 
 choco feature enable -n=useRememberedArgumentsForUpgrades
 
-cinst -y Microsoft-Hyper-V-All -source windowsFeatures
+cinst Microsoft-Hyper-V-All -source windowsFeatures -y –cacheLocation $ChocoCachePath
 
-cinst -y notepadplusplus.install
-cinst -y GoogleChrome
-cinst -y 7zip.install
-cinst -y FoxitReader
+cinst notepadplusplus.install -y –cacheLocation $ChocoCachePath
+cinst GoogleChrome -y –cacheLocation $ChocoCachePath
+cinst 7zip.install -y –cacheLocation $ChocoCachePath
+cinst FoxitReader -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y pdfsam.install
-cinst -y paint.net
-cinst teamviewer -y --version 13.2.26558
+cinst pdfsam.install -y –cacheLocation $ChocoCachePath
+cinst paint.net -y –cacheLocation $ChocoCachePath
+cinst teamviewer -y --version 13.2.26558 –cacheLocation $ChocoCachePath
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
-cinst -y winmerge
-cinst -y winmerge
-cinst -y winmerge
-cinst -y teamspeak
-cinst -y anydesk
-cinst -y hxd
-cinst -y far
-cinst -y firefox
-cinst -y filezilla
-cinst -y sysinternals
-cinst -y fiddler
+cinst winmerge -y –cacheLocation $ChocoCachePath
+cinst winmerge -y –cacheLocation $ChocoCachePath
+cinst winmerge -y –cacheLocation $ChocoCachePath
+cinst teamspeak -y –cacheLocation $ChocoCachePath
+cinst anydesk -y –cacheLocation $ChocoCachePath
+cinst hxd -y –cacheLocation $ChocoCachePath
+cinst far -y –cacheLocation $ChocoCachePath
+cinst firefox -y –cacheLocation $ChocoCachePath
+cinst filezilla -y –cacheLocation $ChocoCachePath
+cinst sysinternals -y –cacheLocation $ChocoCachePath
+cinst fiddler -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y nodejs.install
+cinst nodejs.install -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y vscode
+cinst vscode -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y tortoisesvn
+cinst tortoisesvn -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y jdk8
+cinst jdk8 -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst -y sass
+cinst sass -y –cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 npm install -g npm-windows-upgrade
@@ -57,4 +59,3 @@ Invoke-Reboot
 
 # Pinning Things
 Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
-
