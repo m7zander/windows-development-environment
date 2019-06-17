@@ -1,1 +1,2 @@
 choco install git.install -y
+REG ADD "HKCU\Control Panel\Desktop" /v EnablePerProcessSystemDPI /t REG_DWORD /d 0x00000001 /f
