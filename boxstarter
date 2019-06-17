@@ -1,4 +1,5 @@
-# Configure Windows
+$Boxstarter.RebootOk=$true
+$Boxstarter.AutoLogin=$true
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableShowRibbon
 Disable-GameBarTips
 Disable-BingSearch
@@ -15,21 +16,21 @@ cinst -y notepadplusplus.install
 cinst -y GoogleChrome
 cinst -y 7zip.install
 cinst -y FoxitReader
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst -y pdfsam.install
 cinst -y paint.net
-cinst -y teamviewer --version 13.2.26558
+cinst teamviewer -y --version 13.2.26558
 
-if (Test-PendingReboot) { Invoke-Reboot }
+# try installation of winmerge three times, because download from sourceforge is sometimes failing
+cinst -y winmerge
+cinst -y winmerge
 cinst -y winmerge
 cinst -y teamspeak
 cinst -y anydesk
 cinst -y hxd
 cinst -y far
-if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y firefox
-if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y fiddler
-if (Test-PendingReboot) { Invoke-Reboot }
 cinst -y sysinternals
 cinst -y nodejs.install
 cinst -y vscode
@@ -37,11 +38,6 @@ cinst -y filezilla
 cinst -y tortoisesvn
 cinst -y jdk8
 cinst -y sass
-
-if (Test-PendingReboot) { Invoke-Reboot }
-
-# Restart PowerShell / CMDer before moving on - or run
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 npm install -g npm-windows-upgrade
 npm install -g gulp-cli
@@ -54,5 +50,5 @@ Install-WindowsUpdate -acceptEula
 Invoke-Reboot
 
 # Pinning Things
-#Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
+Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
 
