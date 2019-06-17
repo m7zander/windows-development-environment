@@ -21,7 +21,8 @@ cinst FoxitReader -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst pdfsam.install -y -cacheLocation $ChocoCachePath
 cinst paint.net -y -cacheLocation $ChocoCachePath
-cinst teamviewer -y --version 13.2.26558 -cacheLocation $ChocoCachePath
+cinst teamviewer -y --version 13.2.26558 -cacheLocation $ChocoCachePath --ignore-checksums
+choco pin add -n=teamviewer
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
 cinst winmerge -y -cacheLocation $ChocoCachePath
