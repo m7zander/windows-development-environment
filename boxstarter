@@ -12,39 +12,39 @@ Update-ExecutionPolicy Unrestricted
 
 choco feature enable -n=useRememberedArgumentsForUpgrades
 
-cinst Microsoft-Hyper-V-All -source windowsFeatures -y –cacheLocation $ChocoCachePath
+cinst Microsoft-Hyper-V-All -source windowsFeatures -y -cacheLocation $ChocoCachePath
 
-cinst notepadplusplus.install -y –cacheLocation $ChocoCachePath
-cinst GoogleChrome -y –cacheLocation $ChocoCachePath
-cinst 7zip.install -y –cacheLocation $ChocoCachePath
-cinst FoxitReader -y –cacheLocation $ChocoCachePath
+cinst notepadplusplus.install -y -cacheLocation $ChocoCachePath
+cinst GoogleChrome -y -cacheLocation $ChocoCachePath
+cinst 7zip.install -y -cacheLocation $ChocoCachePath
+cinst FoxitReader -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst pdfsam.install -y –cacheLocation $ChocoCachePath
-cinst paint.net -y –cacheLocation $ChocoCachePath
-cinst teamviewer -y --version 13.2.26558 –cacheLocation $ChocoCachePath
+cinst pdfsam.install -y -cacheLocation $ChocoCachePath
+cinst paint.net -y -cacheLocation $ChocoCachePath
+cinst teamviewer -y --version 13.2.26558 -cacheLocation $ChocoCachePath
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
-cinst winmerge -y –cacheLocation $ChocoCachePath
-cinst winmerge -y –cacheLocation $ChocoCachePath
-cinst winmerge -y –cacheLocation $ChocoCachePath
-cinst teamspeak -y –cacheLocation $ChocoCachePath
-cinst anydesk -y –cacheLocation $ChocoCachePath
-cinst hxd -y –cacheLocation $ChocoCachePath
-cinst far -y –cacheLocation $ChocoCachePath
-cinst firefox -y –cacheLocation $ChocoCachePath
-cinst filezilla -y –cacheLocation $ChocoCachePath
-cinst sysinternals -y –cacheLocation $ChocoCachePath
-cinst fiddler -y –cacheLocation $ChocoCachePath
+cinst winmerge -y -cacheLocation $ChocoCachePath
+cinst winmerge -y -cacheLocation $ChocoCachePath
+cinst winmerge -y -cacheLocation $ChocoCachePath
+cinst teamspeak -y -cacheLocation $ChocoCachePath
+cinst anydesk -y -cacheLocation $ChocoCachePath
+cinst hxd -y -cacheLocation $ChocoCachePath
+cinst far -y -cacheLocation $ChocoCachePath
+cinst firefox -y -cacheLocation $ChocoCachePath
+cinst filezilla -y -cacheLocation $ChocoCachePath
+cinst sysinternals -y -cacheLocation $ChocoCachePath
+cinst fiddler -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst nodejs.install -y –cacheLocation $ChocoCachePath
+cinst nodejs.install -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst vscode -y –cacheLocation $ChocoCachePath
+cinst vscode -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst tortoisesvn -y –cacheLocation $ChocoCachePath
+cinst tortoisesvn -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst jdk8 -y –cacheLocation $ChocoCachePath
+cinst jdk8 -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst sass -y –cacheLocation $ChocoCachePath
+cinst sass -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 npm install -g npm-windows-upgrade
