@@ -1,4 +1,4 @@
-$ChocoCachePath = “C:\Temp”
+$ChocoCachePath = "C:\Temp"
 New-Item -Path $ChocoCachePath -ItemType directory -Force
 $Boxstarter.RebootOk=$true
 $Boxstarter.AutoLogin=$true
