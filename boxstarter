@@ -34,6 +34,7 @@ cinst far -y -cacheLocation $ChocoCachePath
 cinst firefox -y -cacheLocation $ChocoCachePath
 cinst filezilla -y -cacheLocation $ChocoCachePath
 cinst sysinternals -y -cacheLocation $ChocoCachePath
+cinst git.install -y -cacheLocation $ChocoCachePath
 cinst fiddler -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst nodejs.install -y -cacheLocation $ChocoCachePath
