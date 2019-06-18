@@ -20,6 +20,5 @@ A bunch of tools are powered by Node and installed via npm. This applies to you 
 In the future, you might want to update `npm`. On Windows, just running `npm i -g npm` doesn't always do what it should, so use `npm-windows-upgrade` instead:
 
 ```
-npm install -g npm-windows-upgrade
 npm-windows-upgrade
 ```
