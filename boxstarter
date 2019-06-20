@@ -5,6 +5,7 @@ Disable-GameBarTips
 Disable-BingSearch
 Enable-MicrosoftUpdate
 Set-TaskbarOptions -AlwaysShowIconsOn
+Set-ItemProperty -Path HKCU:\Control Panel\Desktop -Name EnablePerProcessSystemDPI -Type DWord -Value 1
 
 Update-ExecutionPolicy Unrestricted
 
@@ -47,10 +48,9 @@ cinst jdk8 -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 cinst sass -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+choco install git.install -y
 
 npm install -g npm-windows-upgrade
-npm install -g gulp-cli
-npm install -g brunch
 npm install -g browser-sync
 
 Install-WindowsUpdate -acceptEula
