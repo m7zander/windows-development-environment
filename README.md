@@ -2,7 +2,7 @@
 A fresh Windows isn't entirely ready for modern web development, but all the tools you need are available. A good terminal, popular bash tools, Git, a decent package manager - when properly setup, modern web development on Windows can be a lot of fun.
 
 ## Automate it!
-All needed Tools and some important Windows settings and features can be installed automatically thanks to the magic of [Boxstarter](http://boxstarter.org/). Simply press WINDOWS+R and run:
+All needed tools and some important Windows settings and features can be installed automatically thanks to the magic of [Boxstarter](http://boxstarter.org/). Simply press WINDOWS+R and run:
 
 ```powershell
 iexplore.exe https://t1p.de/ifn9
@@ -15,7 +15,7 @@ iexplore.exe http://boxstarter.org/package/nr/url?https://raw.githubusercontent.
 ```
 
 #### Node and npm
-A bunch of tools are powered by Node and installed via npm. This applies to you even if you don't care about Node development. If you want to install tools for React, Azure, TypeScript, or Cordova, you'll need this.
+A bunch of tools are powered by Node and installed via npm. This applies to you even if you don't care about Node development.
 
 In the future, you might want to update `npm`. On Windows, just running `npm i -g npm` doesn't always do what it should, so use `npm-windows-upgrade` instead:
 
