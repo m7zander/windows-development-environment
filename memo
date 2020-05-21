@@ -1,2 +1,4 @@
 choco install git.install -y
 REG ADD "HKCU\Control Panel\Desktop" /v EnablePerProcessSystemDPI /t REG_DWORD /d 0x00000001 /f
+Get-AppxPackage -AllUsers | Remove-AppxPackage
+Copy-Item '\\\DeploymentShare$\Scripts\DefaultLayouts.xml' -Destination C:\Users\Default\AppData\Local\Microsoft\Windows\shell\ -Force
