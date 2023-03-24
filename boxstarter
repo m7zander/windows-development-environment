@@ -2,7 +2,6 @@ $ChocoCachePath = "C:\Temp"
 New-Item -Path $ChocoCachePath -ItemType directory -Force
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableShowRibbon
 Disable-GameBarTips
-Set-TaskbarOptions -AlwaysShowIconsOn
 
 choco feature enable -n=useRememberedArgumentsForUpgrades
 
