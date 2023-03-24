@@ -4,8 +4,6 @@ Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleB
 Disable-GameBarTips
 Set-TaskbarOptions -AlwaysShowIconsOn
 
-Update-ExecutionPolicy Unrestricted
-
 choco feature enable -n=useRememberedArgumentsForUpgrades
 
 cinst notepadplusplus.install -y -cacheLocation $ChocoCachePath
