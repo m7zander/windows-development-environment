@@ -5,27 +5,27 @@ Disable-GameBarTips
 
 choco feature enable -n=useRememberedArgumentsForUpgrades
 
-cinst notepadplusplus.install -y -cacheLocation $ChocoCachePath
-cinst GoogleChrome -y -cacheLocation $ChocoCachePath
-cinst 7zip.install -y -cacheLocation $ChocoCachePath
-cinst FoxitReader -y -cacheLocation $ChocoCachePath
+choco install notepadplusplus.install -y -cacheLocation $ChocoCachePath
+choco install GoogleChrome -y -cacheLocation $ChocoCachePath
+choco install 7zip.install -y -cacheLocation $ChocoCachePath
+choco install FoxitReader -y -cacheLocation $ChocoCachePath
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-cinst pdfsam.install -y -cacheLocation $ChocoCachePath
-cinst paint.net -y -cacheLocation $ChocoCachePath
-cinst teamviewer -y -cacheLocation $ChocoCachePath
+choco install pdfsam.install -y -cacheLocation $ChocoCachePath
+choco install paint.net -y -cacheLocation $ChocoCachePath
+choco install teamviewer -y -cacheLocation $ChocoCachePath
 choco pin add -n=teamviewer
-cinst chocolatey -y -cacheLocation $ChocoCachePath
+choco install chocolatey -y -cacheLocation $ChocoCachePath
 
 # try installation of winmerge three times, because download from sourceforge is sometimes failing
-cinst winmerge -y -cacheLocation $ChocoCachePath
-cinst winmerge -y -cacheLocation $ChocoCachePath
-cinst winmerge -y -cacheLocation $ChocoCachePath
-cinst anydesk -y -cacheLocation $ChocoCachePath
-cinst hxd -y -cacheLocation $ChocoCachePath
-cinst far -y -cacheLocation $ChocoCachePath
-cinst firefox -y -cacheLocation $ChocoCachePath
-cinst filezilla -y -cacheLocation $ChocoCachePath
-cinst sysinternals -y -cacheLocation $ChocoCachePath
+choco install winmerge -y -cacheLocation $ChocoCachePath
+choco install winmerge -y -cacheLocation $ChocoCachePath
+choco install winmerge -y -cacheLocation $ChocoCachePath
+choco install anydesk -y -cacheLocation $ChocoCachePath
+choco install hxd -y -cacheLocation $ChocoCachePath
+choco install far -y -cacheLocation $ChocoCachePath
+choco install firefox -y -cacheLocation $ChocoCachePath
+choco install filezilla -y -cacheLocation $ChocoCachePath
+choco install sysinternals -y -cacheLocation $ChocoCachePath
 
 # Pinning Things
 Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
